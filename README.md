@@ -1,8 +1,8 @@
 # Grocery List
 
-This application allows user to register and login to their shopping list.
+This application allows users to register and login to their shopping list.
 They can add items and mark as purchased.
-At the end of their shopping trip, they can press the Final Check to confirm that
+At the end of their shopping trip, they can press the Final Check button to confirm that
 they have purchased all the items on their list.
 
 ## Run application
