@@ -1,0 +1,73 @@
+<div>
+  <div class="col-xs-10">
+  </div>
+  <div class="col-xs-2">
+  <button class="btn btn-danger" ng-click="logout()">Logout</button>
+</div>
+<br>
+<br>
+<!-- New Item row -->
+<div class="row">
+    <form name="groceryForm" role="form" novalidate ng-submit="addItem()">
+        <div class="form-group">
+          <div class="col-xs-10">
+            <input type="text" class="form-control" name="content"
+                   placeholder="Add new grocery item" required ng-model="newItem.name">
+          </div>
+          <div class="col-xs-1">
+            <button class="btn btn-primary" ng-disabled="groceryForm.$invalid">+</button>
+          </div>
+          <div class="col-xs-12">
+            <span class="has-error control-label"
+              ng-show="groceryForm.content.$invalid && groceryForm.content.$dirty">
+              Name is required.
+            </span>
+          </div>
+        </div>
+    </form>
+</div>
+<br>
+<br>
+<div>
+  <h2 class="subheader text-center">Items to Buy</h2>
+  <div class="row row-header">
+  <div class="col-xs-2">
+  </div>
+  <div class="col-xs-8">
+    <h3> Item</h3>
+  </div>
+  <div class="col-xs-2">
+    <h3>Remove</h3>
+  </div>
+  </div>
+  <ul class="list-unstyled">
+    <li ng-repeat="grocery in groceries">
+      <div class="row grocery-item">
+        <div class="col-xs-2">
+          <div class="checkbox">
+            <input type="checkbox" ng-model="grocery.purchased" ng-checked="grocery.purchased === true"
+                  ng-true-value="true" ng-false-value="false" ng-change="updateItem(grocery)">
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <h4>{{grocery.name}}</h4>
+        </div>
+        <div class="col-xs-2 text-right">
+          <button type="submit" class="btn btn-danger"
+                  ng-click="removeItem(grocery)">Remove</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="footer">
+  <div class="col-xs-10">
+    <span class="has-error control-label" id="check">
+      {{check}}
+    </span>
+  </div>
+  <div class="col-xs-2">
+    <button class="btn btn-primary" ng-click="checkList()">Final Check</button>
+  </div>
+</div>

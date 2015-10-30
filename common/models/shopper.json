@@ -1,0 +1,26 @@
+{
+  "name": "Shopper",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "grocerylists": {
+      "type": "hasMany",
+      "model": "grocerylist",
+      "foreignKey": "shopperId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
