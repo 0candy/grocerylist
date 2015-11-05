@@ -28,3 +28,6 @@ $ node .
 View application by going to [http://localhost:3000](http://localhost:3000)
 
 View application explorer by going to [http://localhost:3000/explorer](http://localhost:3000/explorer)
+
+## Add test section
+Test
